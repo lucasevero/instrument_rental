@@ -12,10 +12,8 @@ class OffersController < ApplicationController
   end
 
   def create
-    raise
     @offer = Offer.new(offer_params)
-    @user = User.find(params[:user_id])
-    @offer.user = @user
+    @offer.user = current_user
     if @offer.save
       redirect_to offer_path(@offer)
     else
