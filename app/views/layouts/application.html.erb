@@ -12,6 +12,26 @@
   </head>
 
   <body>
+    <div class="navbar-instruments d-brightyellow">
+      <%= link_to(root_path) do %>
+        <%= image_tag('logo') %>
+      <% end %>
+      <div class="search-bar">
+        <p>find an instrument</p>
+        <%= link_to(offers_path) do %>
+          <%= image_tag('search') %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path(current_user), method: :delete, class: "d-black", id: "login" do %>
+          <p>sign out</p>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path, class: "d-black", id: "login" do %>
+          <p>log in</p>
+        <% end %>
+      <% end %>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
