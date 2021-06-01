@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+# Gemfile to add cloudinary services into our app
+gem 'cloudinary', '~> 1.16.0'
