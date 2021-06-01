@@ -7,6 +7,7 @@
   margin: 12px 0;
   width: 100%;
   border-radius: 4px;
+  color: $black;
 }
 
 .card-image img {
@@ -27,4 +28,15 @@
   span {
     font-weight: lighter;
   }
+}
+
+.card-booking {
+  height: 200px;
+  width: 260px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.our-box-shadow {
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
