@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :deals, only: [:new, :create]
   end
 
-  resources :deals, only: [:index]
-
-  post '/deals/:id/approve', to: 'deals#approve', as: :approve_deal
-  post '/deals/:id/deny', to: 'deals#deny', as: :deny_deal
+  resources :deals, only: [:index] do
+    post :approve
+    post :deny
+  end
 end
