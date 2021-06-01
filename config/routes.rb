@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :deals, only: [:index] do
-    post :approve
-    post :deny
+    member do
+      post :approve
+      post :deny
+    end
   end
 end
