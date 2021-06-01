@@ -1,0 +1,30 @@
+.card-result {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px 18px;
+  background-color: white;
+  margin: 12px 0;
+  width: 70%;
+  border-radius: 4px;
+}
+
+.card-image img {
+  border-radius: 16px;
+}
+
+.card-description {
+  margin: 0 16px;
+  h4, p {
+    margin-bottom: 0;
+  }
+}
+
+.card-price {
+  p {
+    font-weight: bold;
+  }
+  span {
+    font-weight: lighter;
+  }
+}
