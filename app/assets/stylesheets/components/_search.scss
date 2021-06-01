@@ -1,0 +1,18 @@
+.search-bar {
+  background-color: #F9F9F9;
+  height: 35px;
+  width: 42%;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: auto 0 auto 10px;
+    color: gray;
+  }
+  img {
+    height: 26px;
+    width: 26px;
+    margin: auto 10px auto 0;
+  }
+}
