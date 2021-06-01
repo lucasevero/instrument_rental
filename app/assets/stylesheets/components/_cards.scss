@@ -40,3 +40,9 @@
 .our-box-shadow {
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-gap: 8px
+}

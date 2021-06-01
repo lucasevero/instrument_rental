@@ -1,23 +1,34 @@
 <%= render 'shared/banner' %>
-<h1>Welcome to Instrument Rental</h1>
+<div class="container my-4">
+  <div class="cards">
+    <div class="card-home">
+      <%= link_to offers_path do %>
+        <%= image_tag "https://static.turbosquid.com/Preview/001233/638/6C/3D-electric-guitar-b-c_600.jpg", style: "width: 180px" %> 
+      <% end %>
+    </div>
+      <div class="card-home">
+      <%= link_to offers_path do %>
+        <%= image_tag "https://cdn.awsli.com.br/600x450/180/180796/produto/39153202f854c6cf1d.jpg", style: "width: 180px" %> 
+      <% end %>
+    </div>
+      <div class="card-home">
+      <%= link_to offers_path do %>
+        <%= image_tag "https://www.capoeirashop.fr/132-large_default/pandeiro-lua-rasta.jpg", style: "width: 180px" %> 
+      <% end %>
+    </div>
+      <div class="card-home">
+      <%= link_to new_offer_path do %>
+        <%= image_tag "https://png.pngtree.com/png-clipart/20200702/ourmid/pngtree-new-offer-banner-png-image_2278852.jpg", style: "width: 180px" %> 
+      <% end %>
+    </div>
+  </div>
 
-<%= link_to offers_path do %>
-  <%= image_tag "https://static.turbosquid.com/Preview/001233/638/6C/3D-electric-guitar-b-c_600.jpg", style: "width: 180px" %> 
-<% end %>
-<%= link_to offers_path do %>
-  <%= image_tag "https://cdn.awsli.com.br/600x450/180/180796/produto/39153202f854c6cf1d.jpg", style: "width: 180px" %> 
-<% end %>
-<%= link_to offers_path do %>
-  <%= image_tag "https://www.capoeirashop.fr/132-large_default/pandeiro-lua-rasta.jpg", style: "width: 180px" %> 
-<% end %>
-
-<%= link_to  "New offer", new_offer_path %>
-
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path(current_user), method: :delete, class: "dropdown-item" %>
-<% else %>
-<%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
-<%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
-<% end %>
+  <% if user_signed_in? %>
+    <%= link_to "Sign Out", destroy_user_session_path(current_user), method: :delete, class: "dropdown-item" %>
+  <% else %>
+  <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+  <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
+  <% end %>
+</div>
 
 <p>Find me in app/views/pages/home.html.erb</p>
