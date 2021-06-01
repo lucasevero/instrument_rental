@@ -1,0 +1,6 @@
+<%= simple_form_for @offer do |f| %>
+  <%= f.input :instrument, as: :select, collection: Offer::INSTRUMENTS %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
