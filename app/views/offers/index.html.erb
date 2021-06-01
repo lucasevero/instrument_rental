@@ -2,19 +2,21 @@
   <h2>Results for 'ALL INSTRUMENTS'</h2>
   <p><%= Offer.count %> results</p>
   <% @offers.each do |offer| %>
-    <div class="card-result">
-      <div class="card-image">
-        <%= image_tag "https://via.placeholder.com/133" %>
+    <%= link_to offer_path(offer) do %>
+      <div class="card-result">
+        <div class="card-image">
+          <%= image_tag "https://via.placeholder.com/133" %>
+        </div>
+        <div class="card-description">
+          <h4><%= offer.instrument %></h4>
+          <p>Acreidto que vamos precisar de uma coluna de descrção no OFFER MODEL para poder exibir aqui o que o vendedor descreveu para seu produto.
+          </p>
+        </div>
+        <div class="card-price">
+          <p>$<%= offer.price.to_i %><span>/day</span></p>
+        </div>
       </div>
-      <div class="card-description">
-        <h4><%= offer.instrument %></h4>
-        <p>Acreidto que vamos precisar de uma coluna de descrção no OFFER MODEL para poder exibir aqui o que o vendedor descreveu para seu produto.
-        </p>
-      </div>
-      <div class="card-price">
-        <p>$<%= offer.price.to_i %><span>/day</span></p>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
