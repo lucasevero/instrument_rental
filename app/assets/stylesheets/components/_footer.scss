@@ -1,0 +1,19 @@
+.footer {
+  background-color: $lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-text {
+  color: $black;
+  margin: auto 20px;
+}
+
+.footer-links {
+  img {
+    margin: auto 20px;
+  }
+}
