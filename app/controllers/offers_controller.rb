@@ -15,6 +15,8 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    integer_to_cents(@offer)
+    
     @offer.user = current_user
     if @offer.save
       redirect_to offer_path(@offer)
@@ -24,6 +26,10 @@ class OffersController < ApplicationController
   end
 
   private
+
+  def integer_to_cents(offer)
+    offer.price *= 100
+  end
 
   def offer_params
     params.require(:offer).permit(:instrument, :price, :location, photos: [])
