@@ -1,6 +1,46 @@
+<div class="instrument-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+  <div class="container">
+    <h1>Test test</h1>
+    <p>This is not a drill. Repeat: this is not a drill</p>
+  </div>
+</div>
+
+<div class="container" style="margin-top: -48px">
+  <div class="row">
+    <div class="instrument-info col-8">
+      <div class="main-info show-box">
+        <h2><%= @offer.instrument %></h2>
+        <h3><%= @offer.location %></h3>
+        <p><%= @offer.price %></p>
+      </div>
+      <div class="description show-box">
+        <h3>Item Description</h3>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+    </div>
+    <div class="book col-4">
+      <div class="user-info show-box">
+        <h4><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
+        <p><%= @offer.user.email %></p>
+      </div>
+      <div class="booking-form show-box">
+        <%= simple_form_for [ @offer, @deal ] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Book", class: "btn btn-success w-100" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<div class="card-booking our-box-shadow">
+
+
+
+
+
+<!-- <div class="card-booking our-box-shadow">
   <p><%= @offer.price %></p>
   <div class="booking-date d-flex">
     <p>start</p>
@@ -8,3 +48,4 @@
   </div>
   <%= link_to  "Book", '#', class: 'our-button' %>
 </div>
+ -->
