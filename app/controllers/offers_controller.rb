@@ -15,8 +15,8 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    integer_to_cents(@offer)
-    
+    convert_integer_to_cents(@offer)
+
     @offer.user = current_user
     if @offer.save
       redirect_to offer_path(@offer)
@@ -24,10 +24,14 @@ class OffersController < ApplicationController
       render 'new'
     end
   end
-
+  
+  def convert_cents_to_integer(offer)
+    offer.price / 100
+  end
+  
   private
-
-  def integer_to_cents(offer)
+  
+  def convert_integer_to_cents(offer)
     offer.price *= 100
   end
 
