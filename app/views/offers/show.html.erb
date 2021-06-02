@@ -11,7 +11,7 @@
       <div class="main-info show-box">
         <h2><%= @offer.instrument %></h2>
         <h3><%= @offer.location %></h3>
-        <p><%= @offer.price %></p>
+        <p><i class="fas fa-euro-sign"></i> <%= @offer.price %></p>
       </div>
       <div class="description show-box">
         <h3>Item Description</h3>
@@ -21,31 +21,15 @@
     <div class="book col-4">
       <div class="user-info show-box">
         <h4><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
-        <p><%= @offer.user.email %></p>
+        <p>Contact: <%= @offer.user.email %></p>
       </div>
       <div class="booking-form show-box">
         <%= simple_form_for [ @offer, @deal ] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, as: :string, type: :text %>
+          <%= f.input :end_date, as: :string, type: :text %>
           <%= f.submit "Book", class: "btn btn-success w-100" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-<!-- <div class="card-booking our-box-shadow">
-  <p><%= @offer.price %></p>
-  <div class="booking-date d-flex">
-    <p>start</p>
-    <p>end</p>
-  </div>
-  <%= link_to  "Book", '#', class: 'our-button' %>
-</div>
- -->
