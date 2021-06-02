@@ -40,3 +40,28 @@
 .our-box-shadow {
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
+
+// Show Cards
+
+.show-box {
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgb(150, 150, 150);
+  padding: 12px;
+  margin: 12px auto;
+}
+
+.social ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.social li {
+  display: inline;
+  color: $mustard;
+  font-size: 32px;
+  &:hover {
+    color: $brightyellow;
+  }
+}

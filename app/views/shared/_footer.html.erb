@@ -1,24 +1,39 @@
-<div class="footer fixed-bottom">
-  <div class="footer-text">
-    <p>Developed with
-      <i class="fas fa-heart"></i>
-    </p>
+<div class="footer d-flex flex-column align-items-center py-4">
+  <div class="devs-info d-flex align-items-center">
+    <div class="footer-text">
+      <p>Developed with
+        <i class="fas fa-heart"></i>
+      </p>
+    </div>
+    <div class="footer-links">
+      <%= link_to root_path do %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar" %>
+      <% end %>
+      <%= link_to root_path do %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/lucasevero", class: "avatar" %>
+      <% end %>
+      <%= link_to root_path do %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cvaldivia83", class: "avatar" %>
+      <% end %>
+      <%= link_to root_path do %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/dedemenezes", class: "avatar" %>
+      <% end %>
+    </div>
+    <div class="footer-text">
+      <p>at Le Wagon Bootcamp batch 609 </p>
+    </div>
   </div>
-  <div class="footer-links">
-    <%= link_to root_path do %>
-      <%= image_tag "https://via.placeholder.com/40", class: "avatar" %>
-    <% end %>
-    <%= link_to root_path do %>
-      <%= image_tag "https://via.placeholder.com/40", class: "avatar" %>
-    <% end %>
-    <%= link_to root_path do %>
-      <%= image_tag "https://via.placeholder.com/40", class: "avatar" %>
-    <% end %>
-    <%= link_to root_path do %>
-      <%= image_tag "https://via.placeholder.com/40", class: "avatar" %>
-    <% end %>
-  </div>
-  <div class="footer-text">
-    <p>at Le Wagon Bootcamp batch #609 </p>
+
+    <div class="social-info d-flex align-items-center pt-3">
+      <%= link_to "#", class: "mx-2" do %>
+       <li><i class="fab fa-facebook-square"></i></li>
+      <% end %>
+      <%= link_to "#", class: "mx-2" do %>
+        <li><i class="fab fa-instagram"></i></li>
+      <% end %>
+      <%= link_to "#", class: "mx-2" do %>
+        <li><i class="fab fa-twitter-square"></i></li>
+      <% end %>
+    </ul>
   </div>
 </div>

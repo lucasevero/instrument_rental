@@ -1,3 +1,5 @@
+// Main Page Banner
+
 .banner {
   background-color: $brightyellow;
   padding: 12vh 0;
@@ -25,6 +27,7 @@
     font-style: italic;
   }
 }
+
 
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
@@ -62,5 +65,28 @@
   .banner-text h1 {
     font-size: 2rem;
   }
+}
+
+// Instrument Banner
+
+.instrument-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+}
+
+.instrument-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.instrument-banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
