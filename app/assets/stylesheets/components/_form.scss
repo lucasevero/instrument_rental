@@ -1,0 +1,25 @@
+.devise-form {
+  background-color: $yellow;
+  padding: 32px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgb(150, 150, 150);
+}
+
+.devise-button {
+  background-color: $green;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgb(150, 150, 150);
+  margin-bottom: 76px;
+  padding: 8px;
+  transition: padding 0.2s ease-out;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+  }
+}
+
+.super-margin-bottom {
+  margin-bottom: 100px;
+}
