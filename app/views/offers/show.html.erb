@@ -1,7 +1,6 @@
 <div class="instrument-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
   <div class="container">
-    <h1>Test test</h1>
-    <p>This is not a drill. Repeat: this is not a drill</p>
+
   </div>
 </div>
 
@@ -20,15 +19,36 @@
     </div>
     <div class="book col-4">
       <div class="user-info show-box">
+        <h3>Owner's info</h3>
         <h4><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
         <p>Contact: <%= @offer.user.email %></p>
       </div>
       <div class="booking-form show-box">
+        <h3>Book this instrument</h3>
         <%= simple_form_for [ @offer, @deal ] do |f| %>
           <%= f.input :start_date, as: :string, type: :text %>
           <%= f.input :end_date, as: :string, type: :text %>
-          <%= f.submit "Book", class: "btn btn-success w-100" %>
+          <%= f.submit "Book", class: "btn w-100", style: "background-color: #F5C53D" %>
         <% end %>
+      </div>
+      <div class="social show-box text-center">
+        <h3>Share this offer</h3>
+        <div class="social-buttons">
+          <ul>
+            <%= link_to "#", class: "mx-1" do %>
+              <li><i class="fab fa-facebook-square"></i></li>
+            <% end %>
+            <%= link_to "#", class: "mx-1" do %>
+              <li><i class="fab fa-twitter-square"></i></li>
+            <% end %>
+            <%= link_to "#", class: "mx-1" do %>
+              <li><i class="fab fa-instagram"></i></li>
+            <% end %>
+            <%= link_to "#", class: "mx-1" do %>
+              <li><i class="fab fa-whatsapp-square"></i></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
