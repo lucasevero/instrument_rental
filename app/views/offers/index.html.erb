@@ -5,7 +5,7 @@
     <%= link_to offer_path(offer) do %>
       <div class="card-result">
         <div class="card-image">
-          <%= image_tag "https://via.placeholder.com/133" %>
+          <%= cl_image_tag offer.photos.first.key %>
         </div>
         <div class="card-description">
           <h4><%= offer.instrument %></h4>
