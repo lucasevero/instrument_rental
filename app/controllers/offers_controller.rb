@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
@@ -36,8 +37,13 @@ class OffersController < ApplicationController
       redirect_to offer_path(@offer)
     else
       render :edit
-    end
+  end
 
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+
+    redirect_to offers_path
   end
 
   private
