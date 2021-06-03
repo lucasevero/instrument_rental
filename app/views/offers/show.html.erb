@@ -39,6 +39,9 @@
         <h3>Owner's info</h3>
         <h4><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
         <p>Contact: <%= @offer.user.email %></p>
+        <% if policy(@offer).destroy? %>
+          <%= link_to  "Delete", offer_path(@offer), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
       <div class="booking-form show-box">
         <h3>Book this instrument</h3>

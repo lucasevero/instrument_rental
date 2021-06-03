@@ -1,7 +1,7 @@
 <%= simple_form_for @offer do |f| %>
-<%= f.input :instrument %>
+<%= f.input :instrument, collection: Offer::INSTRUMENTS, selected: 1 %>
 <%= f.input :location %>
 <%= f.input :price %>
-<%= f.input :user %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.submit %>
 <% end %>

@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :set_and_authorize_offer, only: [:show, :edit, :update, :destroy]
 
   def index
     sql_query = " \
@@ -14,16 +14,17 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.find(params[:id])
     @deal = Deal.new
   end
 
   def new
     @offer = Offer.new
+    authorize @offer
   end
 
   def create
     @offer = Offer.new(offer_params)
+    authorize @offer
     convert_integer_to_cents(@offer)
 
     @offer.user = current_user
@@ -39,7 +40,6 @@ class OffersController < ApplicationController
   end
 
   def edit
-    @offer = Offer.find(params[:id])
   end
 
   def update
@@ -51,7 +51,6 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    @offer = Offer.find(params[:id])
     @offer.destroy
 
     redirect_to offers_path
@@ -63,8 +62,9 @@ class OffersController < ApplicationController
     offer.price *= 100
   end
 
-  def set_offer
+  def set_and_authorize_offer
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 
   def offer_params
