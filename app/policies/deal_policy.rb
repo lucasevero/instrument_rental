@@ -12,4 +12,12 @@ class DealPolicy < ApplicationPolicy
   def create?
     record.offer.user != user
   end
+
+  def approve?
+    record.offer.user == user
+  end
+
+  def deny?
+    record.offer.user == user
+  end
 end
