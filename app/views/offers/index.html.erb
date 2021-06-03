@@ -5,7 +5,9 @@
   <% else %>
     <h2>Results for 'ALL INSTRUMENTS'</h2>
   <% end %>
-  <p><%= Offer.count %> results</p>
+  <p>
+    <%= @offers.size == 0 ? 'No' : @offers.size %> results
+  </p>
   <% @offers.each do |offer| %>
     <%= link_to offer_path(offer) do %>
       <div class="card-result">
