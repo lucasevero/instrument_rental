@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.where(username: params[:username])
+    @user = User.find_by(username: params[:username])
   end
 
   def manage
