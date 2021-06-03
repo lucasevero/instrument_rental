@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find_by(username: params[:username])
+    authorize @user
   end
 
   def manage
