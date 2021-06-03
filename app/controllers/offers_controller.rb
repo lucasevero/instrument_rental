@@ -6,8 +6,8 @@ class OffersController < ApplicationController
   def index
     sql_query = " \
         offers.instrument @@ :query \
-        OR offers.location @@ :query \
         OR offers.description @@ :query \
+        OR offers.location @@ :query \
       "
     @offers = Offer.all
     @offers = Offer.where(sql_query, query: "%#{params[:query]}%") if params[:query].present?
