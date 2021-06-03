@@ -5,12 +5,12 @@
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <h2 class="my-3">Not a member?</h2>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "devise-button" %><br />
+  <%= link_to "Sign up", new_registration_path(resource_name), class: "button-offer" %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <h2 class="my-3">Forgot your password?</h2>
-  <%= link_to "Recover", new_password_path(resource_name), class: "devise-button" %><br />
+  <%= link_to "Recover", new_password_path(resource_name), class: "button-offer" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
