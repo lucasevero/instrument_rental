@@ -10,7 +10,7 @@ class DealsController < ApplicationController
     @deal.offer = @offer
     @deal.user = current_user
     if @deal.save
-      redirect_to offer_path(@deal.offer)
+      redirect_to offer_path(@deal.offer), flash: { notice: 'Congratulations! We will notify you when the user respondes to your request'}
     else
       render 'offers/show'
     end
