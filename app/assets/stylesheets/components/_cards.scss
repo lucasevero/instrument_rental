@@ -65,3 +65,57 @@
     color: $brightyellow;
   }
 }
+
+// Deals cards
+
+.deals-container {
+  background-color: $brightyellow;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgb(150, 150, 150);
+}
+
+.my-deal-requests {
+  padding: 8px 32px;
+}
+
+ .my-offers-requests {
+  padding: 8px 32px;
+ }
+
+.deal-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.deal-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.deal-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.deal-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.deal-card .deal-card-infos {
+  padding: 16px;
+}
+
+.actions p {
+  margin: 0;
+  font-size: 16px;
+}

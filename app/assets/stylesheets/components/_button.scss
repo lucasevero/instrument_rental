@@ -11,3 +11,15 @@
   }
 }
 
+.button-offer {
+  background-color: #F5C53D ;
+  padding: 8px 52px;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #F2B441;
+  }
+}

@@ -1,0 +1,76 @@
+<div class="user-banner d-flex justify-content-around align-items-center">
+  <div class="user-pic">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "user-avatar" %>
+  </div>
+  <div class="info-block">
+    <div class="user-id">
+      <h1>Hello, <%= @user.first_name %> <%= @user.last_name %></h1>
+    </div>
+    <div class="user-info">
+      <h3>You have <%= @user.offers.count %> offers</h3>
+        <ul>
+          <li style="color: #F2B441"><i class="fas fa-star ml-1"></i></li>
+          <li style="color: #F2B441"><i class="fas fa-star mx-1"></i></li>
+          <li style="color: #F2B441"><i class="fas fa-star"></i></li>
+          <li style="color: #F2B441"><i class="fas fa-star mx-1"></i></li>
+        </ul>
+    </div>
+    <div class="offer-actions mt-4">
+      <%= link_to new_offer_path, class: 'button-offer' do %>
+        New Offer
+      <% end %>
+      <%= link_to "#", class: 'button-offer' do %>
+        My Offers
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="deals-container my-2">
+  <div class="row">
+    <div class="my-deal-requests col-6">
+      <h3>My deals:</h3>
+      <% @user.offers.each do |offer| %>
+        <% offer.deals.each do |deal| %>
+          <div class="deal-card my-2">
+            <div class="card-image">
+              <%= cl_image_tag offer.photos.first.key, width: 133 %>
+            </div>
+            <div class="deal-card-infos">
+              <h2>Some message goes here</h2>
+              <div class="actions my-2 d-flex">
+                <%= link_to approve_deal_path(deal), method: :post, class: "d-flex align-items-center" do %>
+                  <i class="fas fa-thumbs-up mx-2"></i>
+                  <p>Approve</p>
+                <% end %>
+                <%= link_to deny_deal_path(deal), method: :post, class: "d-flex align-items-center" do %>
+                  <i class="fas fa-thumbs-down mx-2"></i>
+                  <p>Deny</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="my-offers-requests col-6">
+      <h3>My requests:</h3>
+        <% @my_deals.each do |deal|%>
+          <div class="deal-card my-2">
+            <div class="card-image">
+              <%= cl_image_tag deal.offer.photos.first.key, width: 133 %>
+            </div>
+            <div class="deal-card-infos">
+              <h2>Some message goes here</h2>
+              <div class="actions my-2 d-flex">
+                <%= link_to '#', class: 'cancel d-flex align-items-center' do %>
+                  <i class="fas fa-window-close mx-2"></i>
+                  Cancel Request
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

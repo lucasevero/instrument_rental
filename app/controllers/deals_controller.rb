@@ -25,7 +25,7 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
     @deal.status = "approved"
     if @deal.save
-      redirect_to deals_path(current_user.deals)
+      redirect_to manage_profile_path(current_user)
     else
       render 'deals/index'
     end
@@ -36,7 +36,7 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
     @deal.status = 'denied'
     if @deal.save
-      redirect_to deals_path(current_user.deals)
+      redirect_to manage_profile_path(current_user)
     else
       render 'deals/index'
     end

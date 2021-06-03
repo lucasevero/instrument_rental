@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.where(username: params[:username])
+    @user = User.find_by(username: params[:username])
   end
 
   def manage
     @user = current_user
+    @my_deals = Deal.where(user: current_user)
   end
 end
