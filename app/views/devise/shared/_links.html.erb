@@ -1,6 +1,6 @@
 <%- if controller_name != 'sessions' %>
   <h2 class="my-3">Already a member?</h2>
-  <%= link_to "Log in", new_session_path(resource_name), class: "devise-button" %><br />
+  <%= link_to "Log in", new_session_path(resource_name), class: "button-offer" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
