@@ -3,9 +3,14 @@ class OffersController < ApplicationController
 
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
-
   def index
+    sql_query = " \
+        offers.instrument @@ :query \
+        OR offers.location @@ :query \
+        OR offers.description @@ :query \
+      "
     @offers = Offer.all
+    @offers = Offer.where(sql_query, query: "%#{params[:query]}%") if params[:query].present?
   end
 
   def show
@@ -28,7 +33,7 @@ class OffersController < ApplicationController
       render 'new'
     end
   end
-  
+
   def convert_cents_to_integer(offer)
     offer.price / 100
   end
@@ -53,7 +58,7 @@ class OffersController < ApplicationController
   end
 
   private
-  
+
   def convert_integer_to_cents(offer)
     offer.price *= 100
   end
