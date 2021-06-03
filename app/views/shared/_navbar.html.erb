@@ -4,7 +4,7 @@
   <% end %>
   <%= render 'shared/searchbar' %>
   <% if user_signed_in? %>
-    <%= link_to destroy_user_session_path(current_user), method: :delete, class: "d-black", id: "login" do %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "d-black", id: "login" do %>
       <p>sign out</p>
     <% end %>
   <% else %>
