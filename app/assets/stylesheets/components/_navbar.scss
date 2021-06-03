@@ -6,9 +6,17 @@
   }
 }
 
+.logo-link {
+  padding: 4px;
+  padding-left: 24px;
+}
+
+.navbar {
+  padding: 0;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  background-color: black;
 }
 
 .navbar-lewagon .navbar-brand img {

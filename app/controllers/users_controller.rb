@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     @users = User.all
   end
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
 
   def manage
     @user = current_user
+    authorize @user
     @my_deals = Deal.where(user: current_user)
   end
 end
