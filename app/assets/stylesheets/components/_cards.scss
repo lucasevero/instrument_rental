@@ -70,6 +70,8 @@
 
 .deals-container {
   background-color: $brightyellow;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgb(150, 150, 150);
 }
 
 .my-deal-requests {
@@ -111,4 +113,9 @@
 
 .deal-card .deal-card-infos {
   padding: 16px;
+}
+
+.actions p {
+  margin: 0;
+  font-size: 16px;
 }

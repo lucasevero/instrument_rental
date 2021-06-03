@@ -16,7 +16,7 @@
         </ul>
     </div>
     <div class="offer-actions mt-4">
-      <%= link_to "#", class: 'button-offer' do %>
+      <%= link_to new_offer_path, class: 'button-offer' do %>
         New Offer
       <% end %>
       <%= link_to "#", class: 'button-offer' do %>
@@ -40,11 +40,11 @@
               <h2>Some message goes here</h2>
               <div class="actions my-2 d-flex">
                 <%= link_to approve_deal_path(deal), method: :post, class: "d-flex align-items-center" do %>
-                  <i class="fas fa-thumbs-up"></i>
+                  <i class="fas fa-thumbs-up mx-2"></i>
                   <p>Approve</p>
                 <% end %>
                 <%= link_to deny_deal_path(deal), method: :post, class: "d-flex align-items-center" do %>
-                  <i class="fas fa-thumbs-down ml-2"></i>
+                  <i class="fas fa-thumbs-down mx-2"></i>
                   <p>Deny</p>
                 <% end %>
               </div>
@@ -55,6 +55,22 @@
     </div>
     <div class="my-offers-requests col-6">
       <h3>My requests:</h3>
+        <% @my_deals.each do |deal|%>
+          <div class="deal-card my-2">
+            <div class="card-image">
+              <%= cl_image_tag deal.offer.photos.first.key, width: 133 %>
+            </div>
+            <div class="deal-card-infos">
+              <h2>Some message goes here</h2>
+              <div class="actions my-2 d-flex">
+                <%= link_to '#', class: 'cancel d-flex align-items-center' do %>
+                  <i class="fas fa-window-close mx-2"></i>
+                  Cancel Request
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>

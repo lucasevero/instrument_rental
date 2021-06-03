@@ -9,5 +9,6 @@ class UsersController < ApplicationController
 
   def manage
     @user = current_user
+    @my_deals = Deal.where(user: current_user)
   end
 end
