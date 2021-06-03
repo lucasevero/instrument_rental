@@ -5,8 +5,8 @@ class OffersController < ApplicationController
 
   def index
     sql_query = " \
-        OR offers.name @@ :query \
-        offers.instrument @@ :query \
+        offers.name @@ :query \
+        OR offers.instrument @@ :query \
         OR offers.overview @@ :query \
         OR offers.description @@ :query \
         OR offers.location @@ :query \
