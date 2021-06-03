@@ -2,24 +2,24 @@
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  font-size: 40px;
   font-weight: bold;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 28px;
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 3px 1px 10px rgba(0, 0, 0, 1);
 }
 
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 12vh 0;
+  padding: 20vh 0;
   margin-bottom: 24px;
   border-top: 1px solid $black;
+  text-align: center;
   img {
     filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.25));
     transform: rotate(13.56deg)
@@ -82,7 +82,7 @@
 .instrument-banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 3px 1px 10px rgba(0, 0, 0, 0.8);
   font-size: 32px;
   font-weight: bold;
 }
