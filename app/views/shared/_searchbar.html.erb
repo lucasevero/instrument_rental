@@ -1,6 +1,12 @@
 <div class="search-bar">
-    <p>find an instrument</p>
-    <%= link_to(offers_path) do %>
+  <%= form_tag offers_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "find an instrument"
+    %>
+    <%= submit_tag do %>
       <%= image_tag('search.png') %>
     <% end %>
-  </div>
+  <% end %>
+</div>
