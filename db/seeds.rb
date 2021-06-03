@@ -14,26 +14,26 @@ puts "DB Clean!"
 
 puts "Seeding..."
 
-# andre = User.new(
-#   email: 'dede.menezes@gmail.com',
-#   username: 'dedemenezes',
-#   password: '123456',
-#   first_name: 'André',
-#   last_name: 'Menezes'
-#   )
-andre = User.find(5)
+andre = User.new(
+  email: 'dede.menezes@gmail.com',
+  username: 'dedemenezes',
+  password: '123456',
+  first_name: 'André',
+  last_name: 'Menezes'
+  )
+# andre = User.find(5)
 avatar_andre = URI.open("https://kitt.lewagon.com/placeholder/users/dedemenezes")
 andre.photo.attach(io: avatar_andre, filename: 'avatar_andre.png', content_type: 'image/png')
 andre.save!
 
-# luca = User.new(
-#   email: 'luca.severo@gmail.com',
-#   username: 'lucasevero',
-#   password: '123456',
-#   first_name: 'Luca',
-#   last_name: 'Severo'
-#   )
-luca = User.find(6)
+luca = User.new(
+  email: 'luca.severo@gmail.com',
+  username: 'lucasevero',
+  password: '123456',
+  first_name: 'Luca',
+  last_name: 'Severo'
+  )
+# luca = User.find(6)
 avatar_luca = URI.open("https://kitt.lewagon.com/placeholder/users/lucasevero")
 luca.photo.attach(io: avatar_luca, filename: 'avatar_luca.png', content_type: 'image/png')
 luca.save!
