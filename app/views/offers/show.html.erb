@@ -1,6 +1,24 @@
-<div class="instrument-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @offer.photos.first.key %>');">
-  <div class="container">
-  </div>
+<div class="instrument-banner">
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+          <% @offer.photos.each_with_index do |photo, index| %>
+            <div class="text-center item <%= index == 0 ? 'active' : '' %>">
+              <%= cl_image_tag photo.key, resize: :pad, crop: :fill, height: 450, width: 600 %>
+            </div>
+          <% end %>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
 </div>
 
 <div class="container" style="margin-top: -48px">
