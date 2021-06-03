@@ -1,6 +1,13 @@
 <div class="container">
-  <h2>Results for 'ALL INSTRUMENTS'</h2>
-  <p><%= Offer.count %> results</p>
+  <br>
+  <%  if params[:query].present? %>
+    <h2>Results for '<%= params[:query].upcase %>'</h2>
+  <% else %>
+    <h2>Results for 'ALL INSTRUMENTS'</h2>
+  <% end %>
+  <p>
+    <%= @offers.size == 0 ? 'No' : @offers.size %> results
+  </p>
   <% @offers.each do |offer| %>
     <%= link_to offer_path(offer) do %>
       <div class="card-result">
@@ -18,4 +25,5 @@
       </div>
     <% end %>
   <% end %>
+  <br>
 </div>

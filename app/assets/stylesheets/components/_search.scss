@@ -6,11 +6,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  p {
-    margin: auto 0 auto 10px;
-    color: gray;
+  form {
+    display: flex;
+    margin: 0 10px;
+    width: 100%;
   }
-  img {
+  input {
+    border-radius: 10px;
+  }
+  input[type=text] {
+    height: calc(1.5em + 0.75rem - 1px);
+    border: none;
+    background-color: #F9F9F9;
+  }
+  input[type=image] {
     height: 26px;
     width: 26px;
     margin: auto 10px auto 0;

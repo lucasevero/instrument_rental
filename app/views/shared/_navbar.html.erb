@@ -2,12 +2,7 @@
   <%= link_to(root_path) do %>
     <%= image_tag('https://res.cloudinary.com/rent-an-instrument/image/upload/v1622641825/egqkqzb8itklcsndvwhm.svg') %>
   <% end %>
-  <div class="search-bar">
-    <p>find an instrument</p>
-    <%= link_to(offers_path) do %>
-      <%= image_tag('search.png') %>
-    <% end %>
-  </div>
+  <%= render 'shared/searchbar' %>
   <% if user_signed_in? %>
     <%= link_to destroy_user_session_path(current_user), method: :delete, class: "d-black", id: "login" do %>
       <p>sign out</p>
