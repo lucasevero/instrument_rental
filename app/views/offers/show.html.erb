@@ -3,7 +3,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
           <% @offer.photos.each_with_index do |photo, index| %>
-            <div class="text-center item <%= index == 0 ? 'active' : '' %>">
+            <div class="text-center carousel-item <%= index == 0 ? 'active' : '' %>">
               <%= cl_image_tag photo.key, resize: :pad, crop: :fill, height: 450, width: 600 %>
             </div>
           <% end %>

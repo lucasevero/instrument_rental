@@ -10,7 +10,6 @@
   </button>
   
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -23,17 +22,10 @@
           </div>
         </li>
       <% else %>
-      <li class="nav-item active d-black">
+        <li class="nav-item active d-black">
           <%= link_to "Sign in", new_user_session_path, class: "nav-link text-white", style: "padding: 20px;" %>
         </li>
       <% end %>        
     </ul>
-
   </div>
 </div>
-      <li class="nav-item active">
-          
-        </li>
-        <li class="nav-item">
-          
-        </li>

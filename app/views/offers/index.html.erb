@@ -15,8 +15,8 @@
           <%= cl_image_tag offer.photos.first.key, width: 133 %>
         </div>
         <div class="card-description">
-          <h4><%= offer.instrument %></h4>
-          <p>Acreidto que vamos precisar de uma coluna de descrção no OFFER MODEL para poder exibir aqui o que o vendedor descreveu para seu produto.
+          <h4><%= offer.name %></h4>
+          <p><%= offer.overview %>
           </p>
         </div>
         <div class="card-price">
