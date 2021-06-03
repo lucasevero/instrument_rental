@@ -1,14 +1,16 @@
 class DealsController < ApplicationController
+
   def new
     @offer = Offer.find(params[:offer_id])
     @deal = Deal.new
   end
 
   def create
-    @deal = Deal.new(deal_params)
     @offer = Offer.find(params[:offer_id])
+    @deal = Deal.new(deal_params)
     @deal.offer = @offer
     @deal.user = current_user
+    authorize @deal
     if @deal.save
       redirect_to offer_path(@deal.offer), flash: { notice: 'Congratulations! We will notify you when the user respondes to your request'}
     else
@@ -24,6 +26,7 @@ class DealsController < ApplicationController
     @deals = current_user.deals
     @deal = Deal.find(params[:id])
     @deal.status = "approved"
+    authorize @deal
     if @deal.save
       redirect_to manage_profile_path(current_user)
     else
@@ -35,6 +38,7 @@ class DealsController < ApplicationController
     @deals = current_user.deals
     @deal = Deal.find(params[:id])
     @deal.status = 'denied'
+    authorize @deal
     if @deal.save
       redirect_to manage_profile_path(current_user)
     else
