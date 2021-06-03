@@ -15,9 +15,11 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    authorize @offer
   end
 
   def create
+    authorize @offer
     @offer = Offer.new(offer_params)
     convert_integer_to_cents(@offer)
 
