@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # Pundit: white-list approach.
+  # Pundit: white-list approach. Isso é para lembrar de authorize EVERYWHERE except INDEX!!!!
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   
   # Scope é util quando usados em varios controllers ao mesmo tempo
