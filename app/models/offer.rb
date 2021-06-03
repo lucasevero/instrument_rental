@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-  INSTRUMENTS = %w( guitar electric\ guitar bass drums violin)
+  INSTRUMENTS = %w( Guitar Electric\ Guitar Bass Drums Violin)
   AVAILABLE = %w( approved pending denied )
   
   has_many_attached :photos
