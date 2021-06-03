@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def profile?
     true
   end
+
+  def manage?
+    record.username == user.username
+  end
 end
