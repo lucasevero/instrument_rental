@@ -1,14 +1,16 @@
 class DealsController < ApplicationController
+
   def new
     @offer = Offer.find(params[:offer_id])
     @deal = Deal.new
   end
 
   def create
-    @deal = Deal.new(deal_params)
     @offer = Offer.find(params[:offer_id])
+    @deal = Deal.new(deal_params)
     @deal.offer = @offer
     @deal.user = current_user
+    authorize @deal
     if @deal.save
       redirect_to offer_path(@deal.offer)
     else
