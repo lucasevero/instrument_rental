@@ -8,15 +8,18 @@
   justify-content: space-between;
   form {
     display: flex;
-    margin: 0 18px;
+    margin: 0 10px;
     width: 100%;
   }
   input {
-    background-color: #F9F9F9;
-    border: none;
-    height: calc(1.5em + 0.75rem - 1px);
+    border-radius: 10px;
   }
-  img {
+  input[type=text] {
+    height: calc(1.5em + 0.75rem - 1px);
+    border: none;
+    background-color: #F9F9F9;
+  }
+  input[type=image] {
     height: 26px;
     width: 26px;
     margin: auto 10px auto 0;
