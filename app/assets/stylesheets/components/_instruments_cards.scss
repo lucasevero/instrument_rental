@@ -7,7 +7,22 @@
 
 .instrument_element {
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1.5rem;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:hover h5 {
+    opacity: 1;
+  }
+  h5 {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #0E0000;
+    opacity: 0;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 @media (max-width: 960px) {
