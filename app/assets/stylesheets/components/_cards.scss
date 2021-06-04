@@ -10,6 +10,16 @@
   color: $black;
 }
 
+/* 04/06 modifications */
+.card-result:hover {
+  border: 1px solid #FFC65A;
+}
+
+.card-result-link:hover {
+  text-decoration: none;
+}
+/* 04/06 modifications */
+
 .card-image img {
   border-radius: 16px;
 }

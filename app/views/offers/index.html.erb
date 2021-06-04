@@ -9,7 +9,7 @@
     <%= @offers.size == 0 ? 'No' : @offers.size %> results
   </p>
   <% @offers.each do |offer| %>
-    <%= link_to offer_path(offer) do %>
+    <%= link_to offer_path(offer), class:"card-result-link" do %>
       <div class="card-result">
         <div class="card-image">
           <%= cl_image_tag offer.photos.first.key, width: 133 %>
