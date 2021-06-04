@@ -28,7 +28,7 @@ class DealsController < ApplicationController
     @deal.status = "approved"
     authorize @deal
     if @deal.save
-      redirect_to manage_profile_path(current_user)
+      redirect_to manage_profile_path(current_user), flash: { notice: 'Great! You might want to check your inbox!' }
     else
       render 'deals/index'
     end
@@ -40,7 +40,7 @@ class DealsController < ApplicationController
     @deal.status = 'denied'
     authorize @deal
     if @deal.save
-      redirect_to manage_profile_path(current_user)
+      redirect_to manage_profile_path(current_user), flash: { alert: "Sorry for that! Maybe next time!" }
     else
       render 'deals/index'
     end

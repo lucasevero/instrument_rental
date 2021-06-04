@@ -119,3 +119,32 @@
   margin: 0;
   font-size: 16px;
 }
+
+.actions .approve {
+  color: green;
+  &:hover {
+    text-decoration: none;
+    color: #00681a;
+  }
+}
+
+.actions .cancel {
+  color: #ff781e;
+  &:hover {
+    text-decoration: none;
+    color: #c44d03;
+  }
+}
+
+.actions .deny {
+  color: red;
+  &:hover {
+    text-decoration: none;
+    color: #8e0400;
+  }
+}
+
+.deal-card-infos p {
+  font-size: 12px;
+  font-weight: bold;
+}
