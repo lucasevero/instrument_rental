@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="book col-4">
-      <%= link_to manage_profile_path(@offer.user) do %>
+      <%= link_to root_path do %>
         <div class="user-info show-box" id="owner-card">
           <h3>Owner's info</h3>
           <h4><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
