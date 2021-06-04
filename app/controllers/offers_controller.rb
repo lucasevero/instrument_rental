@@ -37,10 +37,6 @@ class OffersController < ApplicationController
     end
   end
 
-  def convert_cents_to_integer(offer)
-    offer.price / 100
-  end
-
   def edit
   end
 
@@ -70,6 +66,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:instrument, :price, :location, :available, :description, :photos => [])
+    params.require(:offer).permit(:instrument, :name, :overview, :price, :location, :available, :description, :photos => [])
   end
 end
