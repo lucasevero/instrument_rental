@@ -1,4 +1,4 @@
-<div class="user-banner d-flex justify-content-around align-items-center">
+<div class="user-banner d-flex justify-content-around align-items-center mt-4">
   <div class="user-pic">
     <%= cl_image_tag current_user.photo.key, width: 300, class: "user-avatar" %>
   </div>
@@ -7,13 +7,15 @@
       <h1>Hello, <%= @user.first_name %> <%= @user.last_name %></h1>
     </div>
     <div class="user-info">
-      <h3>You have <%= @user.offers.count %> offers</h3>
-        <ul>
-          <li style="color: #F2B441"><i class="fas fa-star ml-1"></i></li>
-          <li style="color: #F2B441"><i class="fas fa-star mx-1"></i></li>
-          <li style="color: #F2B441"><i class="fas fa-star"></i></li>
-          <li style="color: #F2B441"><i class="fas fa-star mx-1"></i></li>
-        </ul>
+      <h3>
+        You have <%= pluralize @user.offers.size, "offer" %>
+      </h3>
+      <ul>
+        <li style="color: #F2B441"><i class="fas fa-star ml-1"></i></li>
+        <li style="color: #F2B441"><i class="fas fa-star mx-1"></i></li>
+        <li style="color: #F2B441"><i class="fas fa-star"></i></li>
+        <li style="color: #F2B441"><i class="fas fa-star mx-1"></i></li>
+      </ul>
     </div>
     <div class="offer-actions mt-4">
       <%= link_to new_offer_path, class: 'button-offer' do %>
@@ -44,7 +46,7 @@
   </div>
 <% end %>
 
-<div class="deals-container my-2">
+<div class="deals-container mt-2 mb-4">
   <div class="row">
     <div class="my-deal-requests col-6">
       <h3>My deals:</h3>
