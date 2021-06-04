@@ -8,16 +8,16 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item dropdown">
+        <%= link_to "Profile", manage_profile_path(current_user.username), class: "dropdown-item btn-navbar" %>
+        <%= link_to "New offer", new_offer_path, class: "dropdown-item btn-navbar" %>
+        <li class="nav-item dropdown" style="margin: 0 30px;">
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", style: 'margin-right: 24px', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", manage_profile_path(current_user.username), class: "dropdown-item text-dark" %>
-            <%= link_to "New offer", new_offer_path, class: "dropdown-item text-dark" %>
             <%= link_to "Sign out", destroy_user_session_path(current_user), method: :delete, class: "dropdown-item text-dark" %>
           </div>
         </li>
@@ -25,7 +25,7 @@
         <li class="nav-item active d-black">
           <%= link_to "Sign in", new_user_session_path, class: "nav-link text-white", style: "padding: 20px;" %>
         </li>
-      <% end %>        
+      <% end %>
     </ul>
   </div>
 </div>
