@@ -30,7 +30,15 @@ import "flatpickr/dist/flatpickr.css";
 // import { initSelect2 } from '../components/init_select2';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 
+import { loadDynamicBannerText } from '../components/banner_typed';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
 });
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  loadDynamicBannerText();
+});
+
