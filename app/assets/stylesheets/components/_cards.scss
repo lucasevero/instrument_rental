@@ -66,6 +66,17 @@
   }
 }
 
+.book {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+#owner-card {
+  text-decoration: none;
+  color: #0E0000;
+}
+
 // Deals cards
 
 .deals-container {
