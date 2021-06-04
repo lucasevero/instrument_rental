@@ -74,7 +74,11 @@
 
 #owner-card {
   text-decoration: none;
-  color: #0E0000;
+  color: $black;
+  opacity: 1;
+  &:hover {
+    color: $tryingout;
+  }
 }
 
 // Deals cards

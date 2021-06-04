@@ -42,16 +42,17 @@
       </div>
     </div>
     <div class="book col-4">
-      <%= link_to root_path do %>
-        <div class="user-info show-box" id="owner-card">
-          <h3>Owner's info</h3>
-          <h4><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
-          <p>Contact: <%= @offer.user.email %></p>
-          <% if policy(@offer).destroy? %>
-            <%= link_to  "Delete", offer_path(@offer), method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="user-info show-box" >
+        <h3>Owner's info</h3>
+        <%= link_to user_profile_path(@offer.user.username) do %>
+          <h4 id="owner-card" ><%= @offer.user.first_name %> <%= @offer.user.last_name %></h4>
+        <% end %>
+        <p>Contact: <%= @offer.user.email %></p>
+        <% if policy(@offer).destroy? %>
+          <%= link_to  "Delete", offer_path(@offer), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+
       <div class="booking-form show-box">
         <h3>Book this instrument</h3>
         <%= simple_form_for [ @offer, @deal ] do |f| %>
