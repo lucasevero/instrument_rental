@@ -4,8 +4,10 @@
 
   <%= simple_form_for @offer do |f| %>
   <%= f.input :instrument, collection: Offer::INSTRUMENTS, selected: 1 %>
+  <%= f.input :name %>
   <%= f.input :location %>
   <%= f.input :price %>
+  <%= f.input :overview %>
   <%= f.input :description %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit, 'Create Offer', class: 'new-offer-btn w-100' %>
