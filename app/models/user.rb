@@ -10,4 +10,14 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+  def display_photo
+    if photo.attached?
+      photo.key
+    else
+      # Cloudinary default profile photo ID
+      "jun7vge4yvdmrhi3wti1.png" 
+    end
+  end
 end
